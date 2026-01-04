@@ -25,7 +25,10 @@ export const TokenController: Controller = {
           ...data.toObject(),
         });
     } catch (err) {
-      res.status(400).send({ error: true, message: (err as Error).message });
+      res.status(400).send({ 
+        error: true,
+         message: (err as Error).message 
+        });
     }       
     },
 
@@ -35,7 +38,9 @@ export const TokenController: Controller = {
       await Token.deleteOne(filters);
       res.status(200).send({ error: false, message: "Token deleted successfully" });
     }   catch (err) {   
-        res.status(404).send({ error: true, message: (err as Error).message });
+        res.status(404).send({ 
+            error: true, 
+            message: (err as Error).message });
     }
     }
 }
