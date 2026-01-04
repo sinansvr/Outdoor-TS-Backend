@@ -16,7 +16,6 @@ export const passwordEncrypt = (password: string): string => {
     throw new Error("Password cannot be empty");
   }
 
-  return pbkdf2Sync(password, keyCode, loopCount, charCount, encType).toString(
-    "hex"
+  return pbkdf2Sync(password, keyCode, loopCount, charCount, encType).toString("hex"
   );
 };
